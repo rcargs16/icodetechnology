@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E8EFE6;  /* Light sage green background */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-content {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 1s ease-in-out forwards;
+    margin-top: 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D0DBC9;  /* Light sage green */
+    padding: 15px 30px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px rgba(95, 113, 97, 0.15);
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    gap: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 18px;
+    color: #5F7161;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5F7161;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3A4D39;  /* Darker green on hover */
+}
+
+.nav-links span {
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links span:hover {
+    color: #3A4D39;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    font-weight: bold;
+    color: #5F7161;
+}
+
+.brand img {
+    width: 30px;
+    height: 30px;
+}
+
+.search-bar {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #6D8B74;
+    background-color: #F7F9F7;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #5F7161;
+    box-shadow: 0 0 5px rgba(95, 113, 97, 0.2);
+}
+
+/* home */
+.section {
+    display: none;
+    text-align: center;
+    margin: 20px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    background: #F7F9F7;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(95, 113, 97, 0.1);
+}
+
+.active {
+    display: block;
+}
+
+/* Home Section */
+.home {
+    background: #F7F9F7;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(95, 113, 97, 0.1);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.logo-container img {
+    width: 150px;
+    height: auto;
+}
+
+.text-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.text-content h2 {
+    color: #5F7161;
+    margin-bottom: 15px;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.text-content p {
+    color: #6D8B74;
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.working-hours {
+    margin-top: 20px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #6D8B74;
+    font-weight: 500;
+    padding: 15px;
+    background: #E8EFE6;
+    border-radius: 15px;
+}
+
+/* About Us Section */
+.about-us {
+    background: #F7F9F7;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(95, 113, 97, 0.1);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.about-us h2 {
+    color: #5F7161;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 30px;
+}
+
+.content-box {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-box h3 {
+    color: #5F7161;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    margin: 25px 0 15px;
+}
+
+.content-box p {
+    color: #6D8B74;
+    line-height: 1.8;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        width: 90%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .text-content {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .content-box {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .home, .about-us {
+        padding: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

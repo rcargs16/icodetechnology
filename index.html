@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCode Technology</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('preloaderShown')) {
+            sessionStorage.setItem('preloaderShown', 'true');
+            window.location.href = 'preloader.html';
+        }
+    </script>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">
+            <img src="logo.png" alt="Logo">
+            iCode Technology
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about-us">About Us</a>
+            <span>Explore</span>
+            <span>Activity</span>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search..">
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <!-- Home -->
+        <section id="home" class="home">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo">
+                <div class="text-content">
+                    <h2>Welcome to iCode Technology</h2>
+                    <p>Your trusted partner in web development, providing innovative and intuitive solutions.</p>
+                    <div class="working-hours">
+                        <strong>Working Hours:</strong><br>
+                        Monday - Friday | 10:00 AM - 5:00 PM<br>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about-us" class="about-us">
+            <h2>About Us</h2>
+            <div class="content-box">
+                <h3>Mission</h3>
+                <p>At iCode Technology, we aim to make web development more accessible and innovative. We strive to create meaningful digital experiences through intuitive design, efficient solutions, and a passion for technology.</p>
+                
+                <h3>Vision</h3>
+                <p>To be a trusted name in web development, inspiring creativity and innovation while making technology seamless and user-friendly for everyone.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
