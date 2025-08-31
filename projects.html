@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - iCode Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+    <style>
+        :root {
+            --primary-color: #3a4f41;
+            --secondary-color: #68a678;
+            --accent-color: #e9f5e1;
+            --text-color: #2d2d2d;
+            --light-text: #f5f5f5;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f1f9f1;
+            color: #2c3e2f;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #354703;
+            font-size: 3rem;
+            margin-top: 1in;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        h3 {
+            font-weight: 800;
+            font-family: 'Dancing Script', cursive;
+            color: #354703;
+            font-size: 50px;
+            margin-top: 1in;
+            text-align: center;
+        }
+
+        /* Projects Container */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns for the layout */
+            gap: 40px; /* Space between cards */
+            padding: 40px;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            margin: 15px 0;
+            color: #203b1f;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #203b1f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-card a:hover {
+            background-color: #064b1f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <h2>Our Projects</h2>
+
+    <!-- Projects Container -->
+    <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project-card" id="project1"
+            onclick="window.open('file:///C:/Users/Royce/Desktop/rochell/FINAL/portfolio/index.html#', '_blank')">
+            <img src="proj1.png" alt="Project 1">
+            <h3>Raegan's Mist</h3>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" id="project2"
+            onclick="window.open(&quot;file:///C:/Users/Royce/Desktop/rochell/FINAL/riley's_closet/index.html#&quot;, '_blank')">
+            <img src="proj2.png" alt="Project 2">
+            <h3>Riley's Closet</h3>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" id="project3"
+            onclick="window.open('file:///C:/Users/Royce/Desktop/rochell/FINAL/starbucks/index.html#contact', '_blank')">
+            <img src="proj3.png" alt="Project 3">
+            <h3>Starbucks Dupe</h3>
+
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" id="project4"
+            onclick="window.open('http://localhost/roch/login.php', '_blank')">
+            <img src="proj4.png" alt="Project 4">
+            <h3>CVIF Student Attendance System</h3>
+        </div>
+    </div>
+</body>
+</html>

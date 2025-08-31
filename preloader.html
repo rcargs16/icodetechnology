@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCode Technology - Preloader</title>
+    <link rel="icon" type="image/x-icon" href="logo-orig.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #E8EFE6;  /* Light sage green background */
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        .preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #E8EFE6, #F7F9F7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 999;
+            animation: fadeOut 1s ease-in-out 3s forwards;
+        }
+
+        .preloader h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #5F7161;  /* Darker sage green */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .preloader p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: #6D8B74;  /* Medium sage green */
+            font-weight: 500;
+            animation: fadeIn 1.5s ease-in-out 0.5s;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            animation: rotate 2s linear infinite;
+        }
+
+        .preloader .est {
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+            color: #6D8B74;
+            opacity: 0.8;
+            font-weight: 500;
+            animation: fadeIn 1.5s ease-in-out 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader Section -->
+    <div class="preloader">
+        <h1>iCode Technology</h1>
+        <p>Web Development</p>
+        <div class="logo"><img src="logo.png"></div>
+        <p class="est">EST. 2025</p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
+    </script>
+</body>
+</html>
