@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - iCode Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3a4f41;
+            --secondary-color: #68a678;
+            --accent-color: #e9f5e1;
+            --text-color: #2d2d2d;
+            --light-text: #f5f5f5;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .faqs-container {
+            width: 100%;
+            max-width: 800px;
+            background-color:#314528;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: white;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 0.8s ease forwards;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .faq-question {
+            background: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question h2 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .faq-icon {
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            background: #fff;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .faq-item.active .faq-question {
+            background: #e9f5e1;
+        }
+
+        .faq-item.active .faq-question h2,
+        .faq-item.active .faq-icon {
+            color: #314528;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 300px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .faq-item:nth-child(1) { animation-delay: 0.2s; }
+        .faq-item:nth-child(2) { animation-delay: 0.4s; }
+        .faq-item:nth-child(3) { animation-delay: 0.6s; }
+        .faq-item:nth-child(4) { animation-delay: 0.8s; }
+        .faq-item:nth-child(5) { animation-delay: 1.0s; }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .faqs-container {
+                padding: 1.5rem;
+            }
+
+            .faq-question h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="faqs-container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h2>What services do you offer?</h2>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We offer a comprehensive range of web development services including custom website design, responsive development, backend development, hosting solutions, and ongoing maintenance and support. Our team specializes in creating tailored solutions that perfectly match your business requirements.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h2>How long does a typical project take?</h2>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Project timelines vary depending on complexity and requirements. A simple website typically takes 2-4 weeks, while more complex projects may take 2-3 months. We'll provide a detailed timeline during our initial consultation.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h2>Do you provide ongoing support?</h2>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we offer comprehensive maintenance and support packages to ensure your website remains secure, up-to-date, and performing optimally. Our support team is available to handle any issues or updates you may need.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h2>What technologies do you use?</h2>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We use modern, industry-standard technologies including HTML5, CSS3, JavaScript, PHP, and various frameworks. Our tech stack is chosen based on project requirements to ensure the best performance and maintainability.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h2>How do I get started?</h2>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Getting started is easy! Simply reach out through our contact form or email us at info@icodetechnology.com. We'll schedule a consultation to discuss your project requirements and provide you with a detailed proposal.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
