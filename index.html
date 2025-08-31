@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iCode Technology</title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="logo-orig.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="typewriter.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <script>
@@ -17,47 +19,126 @@
     </script>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="brand">
-            <img src="logo.png" alt="Logo">
-            iCode Technology
+        <div class="left-space">
+            <h2>iCode Technology</h2>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            &#9776; <!-- Hamburger icon -->
+        </button>
         <div class="nav-links">
-            <a href="#home">Home</a>
             <a href="#about-us">About Us</a>
-            <span>Explore</span>
-            <span>Activity</span>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#faq">FAQs</a>
+            <a href="#contact-us">Contact Us</a>
         </div>
-        <input type="text" class="search-bar" placeholder="Search..">
     </nav>
 
     <!-- Main Content -->
     <div class="main-content" id="main-content">
-        <!-- Home -->
+        <!-- Home Section -->
         <section id="home" class="home">
-            <div class="logo-container">
-                <img src="logo.png" alt="Logo">
-                <div class="text-content">
-                    <h2>Welcome to iCode Technology!</h2>
-                    <p>Your trusted partner in web development, providing innovative and intuitive solutions.</p>
-                    <div class="working-hours">
-                        <strong>Working Hours:</strong><br>
-                        Monday - Friday | 10:00 AM - 5:00 PM<br>
-                    </div>
-                </div>
-            </div>
+            <iframe src="home.html" scrolling="no"></iframe>
         </section>
 
         <!-- About Us Section -->
         <section id="about-us" class="about-us">
-            <h2>About Us</h2>
-            <div class="content-box">
-                <h3>Mission</h3>
-                <p>At iCode Technology, we aim to make web development more accessible and innovative. We strive to create meaningful digital experiences through intuitive design, efficient solutions, and a passion for technology.</p>
-                
-                <h3>Vision</h3>
-                <p>To be a trusted name in web development, inspiring creativity and innovation while making technology seamless and user-friendly for everyone.</p>
-            </div>
+            <iframe src="about-us.html" scrolling="no"></iframe>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <iframe src="services.html" scrolling="no"></iframe>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <iframe src="projects.html" scrolling="no"></iframe>
+        </section>
+
+        <!-- FAQs Section -->
+        <section id="faq" class="faq">
+            <iframe src="faqs.html" scrolling="no"></iframe>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact-us" class="contact-us">
+            <iframe src="contact-us.html" scrolling="no"></iframe>
         </section>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Navigation toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (navToggle) {
+                navToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('show');
+                });
+            }
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (navLinks.classList.contains('show') && 
+                    !navLinks.contains(event.target) && 
+                    !navToggle.contains(event.target)) {
+                    navLinks.classList.remove('show');
+                }
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('show');
+                });
+            });
+
+            // Handle iframe content height
+            const resizeIframes = () => {
+                document.querySelectorAll('iframe').forEach(iframe => {
+                    iframe.style.height = window.innerHeight + 'px';
+                });
+            };
+
+            // Initial resize and add listener
+            resizeIframes();
+            window.addEventListener('resize', resizeIframes);
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Typewriter effect
+            const textElement = document.getElementById("typewriter-text");
+            if (textElement) {
+                const text = textElement.textContent;
+                textElement.textContent = "";
+                let i = 0;
+                
+                function typeWriter() {
+                    if (i < text.length) {
+                        textElement.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100);
+                    }
+                }
+                
+                typeWriter();
+            }
+        });
+    </script>
 </body>
 </html>
